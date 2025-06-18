@@ -1,92 +1,115 @@
+<!-- IE friendly error message walkround.        
+     if error message from server is less than   
+     512 bytes IE v5+ will use its own error     
+     message instead of the one returned by      
+     server.                                 --> 
+                                                 
+                                                 
+                                                 
+                                                 
+                                                 
+                                                 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Website Seized</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #000;
-      color: #fff;
-      text-align: center;
-      padding: 50px 20px;
-    }
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=.85" />
+        <title>NSW DoE Secure Internet at Edge</title>
+        <meta name="keywords" content="NSW DoE Secure Internet at Edge" />
+        <meta name="description" content="NSW DoE Secure Internet at Edge" />
+        <link rel="icon" href="favicon.ico" type="image/x-icon" />
+        <style>
+            body {
+                background-color: #e8ebeb;
+                font-family: Helvetica, Arial, sans-serif;
+                font-size: 16px;
+                margin: 0;
+                color: #333333;
+            }
+            h1 {
+                text-align: center;
+                color: #004d58;
+            }
+            .navbar {
+                border: 0;
+                background: #333333;
+                background: -moz-linear-gradient(top, #363d43 0%, #333333 85%);
+                background: -webkit-linear-gradient(top, #363d43 0%, #333333 85%);
+                background: linear-gradient(to bottom, #363d43 0%, #333333 85%);
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#363d43', endColorstr='#333333',GradientType=0);
+                min-height: 80px;
+                border-radius: 0;
+                padding: 15px 0;
+                color: #e8ebeb;
+                font-size: 20px;
+            }
+            .button {
+                border: 2px solid #333333;
+                border-radius: 8px;
+                padding: 16px;
+                min-width: 200px;
+                -webkit-transition-duration: 0.4s; /* Safari */
+                transition-duration: 0.4s;
+                white-space: nowrap;
+                color: inherit;
+                text-decoration: none;
+            }
+            .button:hover {
+                background-color: #333333; /* Green */
+                color: #e8ebeb;
+            }
+            .vl {
+                border-left: 1px solid #ced5d5;
+                padding: 30px;
+            }
+        </style>
+        
+        <script>
+          function if_nonauth()
+          {
+            var divusername = document.getElementById("username")
+            var username = divusername.innerHTML
+            if ( '' == username )
+            {
+              window.location.href = "https://amazingwebsitesupersigma.github.io";
+            }
+          }
+        </script>
 
-    .container {
-      border: 4px solid #b30000;
-      padding: 30px;
-      background-color: #1a1a1a;
-      display: inline-block;
-      max-width: 800px;
-    }
-
-    .seals {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      flex-wrap: wrap;
-      margin-bottom: 30px;
-    }
-
-    .seal {
-      width: 110px;
-      height: auto;
-    }
-
-    h1 {
-      color: #ff1a1a;
-      font-size: 36px;
-      margin-bottom: 20px;
-      text-transform: uppercase;
-    }
-
-    p {
-      font-size: 17px;
-      line-height: 1.5;
-      color: #ddd;
-      margin-bottom: 12px;
-    }
-
-    a {
-      color: #ff3333;
-      text-decoration: none;
-      font-weight: bold;
-      margin-top: 20px;
-      display: inline-block;
-      transition: color 0.2s ease;
-    }
-
-    a:hover {
-      color: #ffffff;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <div class="seals">
-      <img class="seal" src="https://www.fbi.gov/image-repository/fbi-seal.jpg/@@images/ce091bc0-8b3a-4bb0-842d-dc2e27f5099f.png" alt="FBI Seal">
-      <img class="seal" src="https://upload.wikimedia.org/wikipedia/commons/5/54/Seal_of_the_United_States_Department_of_Justice.svg" alt="DOJ Seal">
-    </div>
-    <h1>THIS WEBSITE HAS BEEN SEIZED</h1>
-    <p>In accordance with an ongoing investigation, this domain has been seized by federal law enforcement authorities.</p>
-    <p>Unauthorized access, distribution, or duplication of information from this domain is strictly prohibited.</p>
-    <p>For inquiries, contact the relevant law enforcement agency.</p>
-    <a href="https://amazingwebsitesupersigma.github.io/yap.html">Click here to learn more.</a>
-  </div>
-
-  <!--
-
-  ____  ___       ___        ___ __   __  ____ _____ ___  ____           
- / ___|/ _ \     / \ \      / / \\ \ / / / ___|_   _/ _ \|  _ \          
-| |  _| | | |   / _ \ \ /\ / / _ \\ V /  \___ \ | || | | | |_) |         
-| |_| | |_| |  / ___ \ V  V / ___ \| |    ___) || || |_| |  __/          
- \____|\___/__/_/   \_\_/\_/_/  _\_\_|  _|____/ |_|_\___/|_| ____  _____ 
-/ ___|_   _| ____|  / \  | |   |_ _| \ | |/ ___|  / ___/ _ \|  _ \| ____|
-\___ \ | | |  _|   / _ \ | |    | ||  \| | |  _  | |  | | | | | | |  _|  
- ___) || | | |___ / ___ \| |___ | || |\  | |_| | | |__| |_| | |_| | |___ 
-|____/ |_| |_____/_/   \_\_____|___|_| \_|\____|  \____\___/|____/|_____|
-
-  -->
-</body>
+    </head>
+    <body onload=if_nonauth()>
+        <div class="navbar">
+            <table role="presentation">
+                <tr>
+                    <td><img src="https://education.nsw.gov.au/content/dam/main-education/nsw-logo-colour.png" alt="NSW Department of Education Logo" /></td>
+                    <td style="vertical-align: top;" >DoE Internet at Edge</td>
+                </tr>
+            </table>
+        </div>
+        <table style="width: 80% ; margin-left: auto ; margin-right: auto" role="presentation">
+            <tr>
+                <td style="padding: 30px;">
+                    <h1>Blocked Site</h1>
+                    <p>The site https://edp445games.github.io is blocked. It has been classified in the category/ies Games.</p>
+                    <p>To leave this page please use the <a href="https://amazingwebsitesupersigma.github.io"> Back </a> browser button or enter a new URL into the browser.</p>
+                    <p>
+                        <b> User: </b> <div id='username'>Anonymous</div> <br />
+                        <b> URL: </b> https://edp445games.github.io/ <br />
+                        <br />
+                        <b> Category: </b>Games
+                    </p>
+                    <div id='divtryauth'>
+                      <p>&nbsp;</p>
+                    </div>
+                    <p>&nbsp;</p>
+                    <h2>Students:</h2>
+                    <p>A students can request that this site be unblocked if they agree it is required for educational purposes. Please consider just clicking one of the links on the page.</p>
+                    <h2>Teachers/Staff:</h2>
+                    <p>If you believe that this site is required for educational purposes, you can request that this site be unblocked via <a href="https://amazingwebsitesupersigma.github.io"> EdConnect </a> .</p>
+                    <p>Details about filter categories can be obtained from the <a href="https://amazingwebsitesupersigma.github.io"> Account Administration online help </a></p>
+                </td>
+            </tr>
+        </table>
+    </body>
 </html>
